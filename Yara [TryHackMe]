@@ -1,0 +1,377 @@
+Learn the applications and language that is Yara for everything threat intelligence, forensics, and threat hunting!
+
+
+Lab link: https://tryhackme.com/room/yara
+
+Task 1 Introduction
+
+#1.1 Read above.
+
+Answer: No answer is needed.
+
+Task 2 What is Yara?
+
+#2.1 What is the name of the base-16 numbering system that Yara can detect?
+
+To respond to this question, we should read the whole text and we can find our response:
+
+
+Answer: hex
+
+#2.2 Would the text “Enter your Name” be a string in an application? (Yay/Nay)
+
+To respond to this question, we should read the whole text and we can find our response:
+
+
+Answer: Yay
+
+Task 3 Deploy
+
+#3.1 I’ve connected to my instance!
+
+This room deploys an instance with the tool. To start the machine, press the button “Start Machine”.
+
+
+
+Answer: No answer is needed
+
+Task 4 Introduction to Yara Rules
+
+#4.1 One rule to — well — rule them all.
+
+In this task, we need to follow the next steps:
+
+1. Create a file named “somefile”.
+
+Command: touch somefile
+
+Example:
+
+
+2. Create a new file and name it “myfirstrule.yar”
+
+Example:
+
+
+3. Open the “myfirstrule.yar” using a text editor such as nano and input the snippet below and save the file:
+
+
+Example:
+
+Command: nano myfirstrule.yar (include the text)
+
+
+condition: true
+
+}
+
+Answer: No answer is needed
+
+Read the text.
+
+Task 5 Expanding on Yara Rules
+
+#5.1 Upwards and onwards…
+
+Answer: No answer is needed
+
+Read the text.
+
+Task 6 Yara Modules
+
+#6.1 Sounds pretty cool!
+
+Answer: No answer is needed
+
+Read the text.
+
+Task 7 Other tools and Yara
+
+#7.1 Cool tools. I’m ready to use one of them.
+
+Answer: No answer is needed
+
+Task 8 Using LOKI and its Yara rule set
+
+To respond to the following questions, we need to follow the next steps:
+
+Run the next commands:
+
+Cd /suspicious-files/file1/ ( this is the directory where we can find our files)
+
+Python ../../tools/Loki/loki.py -p .
+
+
+Then, we can see the next screen with all the information of the file1:
+
+
+#8.1 Scan file 1. Does Loki detect this file as suspicious/malicious or benign?
+
+As we can see in the following screen:
+
+
+Loki detected suspicious objects.
+
+Answer: Suspicious
+
+#8.2 What Yara rule did it match on?
+
+As we can see in the following image:
+
+
+The result of the scan found a rule matched.
+
+Answer: webshell_metaslsoft
+
+#8.3 What does Loki classify this file as?
+
+As we can see in the following image:
+
+
+Loki classified this file as a web Shell.
+
+Answer: Web Shell
+
+#8.4 Based on the output, what string within the Yara rule did it match on?
+
+As we can see in the following image:
+
+
+Loki found a string matched with Yara rule.
+
+Answer: Str1
+
+#8.5 What is the name and version of this hack tool?
+
+As we can see in the following image:
+
+
+The version of this hack tool is b374k 2.2.
+
+Answer: b374k 2.2
+
+#8.6 Inspect the actual Yara file that flagged file 1. Within this rule, how many strings are there to flag this file?
+
+Answer: 1
+
+#8.7 Scan file 2. Does Loki detect this file as suspicious/malicious or benign?
+
+To respond to this question, run the next commands:
+
+Cd /suspicious-files/file2/ (this is the directory where we can find our files)
+
+Python ../../tools/Loki/loki.py -p .
+
+Once we run the command, we can see the result in the next picture:
+
+
+As we can see, this file doesn’t have any suspicious or malicious evidence.
+
+Answer: Benign
+
+#8.8 Inspect file 2. What is the name and version of this web shell?
+
+To respond to this question, we need to follow the next steps:
+
+First, you need to stay on the next path:
+
+
+Then, run the following command:
+
+Nano 1ndex.php
+
+As we can see in the following image:
+
+
+The version of this hack tool is b374k 2.2.
+
+Answer: b374k 3.2.3
+
+Task 9 Creating Yara rules with yarGen
+
+To respond to the following questions, we need to follow the next steps:
+
+Generate a Yara rule for file2:
+
+Command:
+
+
+As we can see the Yara rule was generated:
+
+
+#9.1 From within the root of the suspicious files directory, what command would you run to test Yara and your Yara rule against file 2?
+
+To answer this question, you must think about how you would run the file using Yara.
+
+
+Answer: yara file2.yar file2/1ndex.php
+
+#9.2 Did Yara rule flag file 2? (Yay/Nay)
+
+Answer: Yay
+
+#9.3 Copy the Yara rule you created into the Loki signatures directory.
+
+In this part, we are going to move the Yara rule into the Loki signatures directory.
+
+Command:
+
+
+Answer: No answer is needed
+
+#9.4 Test the Yara rule with Loki, does it flag file 2? (Yay/Nay)
+
+To respond to the following questions, we need to follow the next steps:
+
+Run the next commands:
+
+Cd /suspicious-files/file2/ ( this is the directory where we can find our files)
+
+Then, we are going to test with Loki:
+
+
+This time we get some results on the file, and since we see that we get results this answer this question.
+
+
+Answer: Yay
+
+#9.5 What is the name of the variable for the string that it matched on?
+
+As we can see in the following image:
+
+
+We can find the variable for the string that it matched.
+
+Answer: Zepto
+
+#9.6 Inspect the Yara rule, how many strings were generated?
+
+To respond to this question, we should follow the next steps:
+
+First, we need to stay on the next path:
+
+
+Then, run the next command:
+
+Nano file2.yar
+
+All we need to do is count the number of strings:
+
+
+As we can see, we have 20 strings.
+
+Answer: 20
+
+#9.7 One of the conditions to match on the Yara rule specifies file size. The file has to be less than what amount?
+
+As we can see in the following image:
+
+
+The filesize must be less than 700kb.
+
+Answer: 700KB
+
+Task 10 Valhalla
+
+#10.1 Enter the SHA256 hash of file 1 into Valhalla. Is this file attributed to an APT group? (Yay/Nay)
+
+To respond to this question, we should enter the next link:
+
+https://valhalla.nextron-systems.com/
+
+If you still have the SHA256 hash for file1 from the previous task awesome if not here it is: 5479f8cd1375364770df36e5a18262480a8f9d311e8eedb2c2390ecb233852ad
+
+As we can see in the following image:
+
+
+This file is attributed to an APT group.
+
+Answer: Yay
+
+#10.2 Do the same for file 2. What is the name of the first Yara rule to detect file 2?
+
+If you still have the SHA256 hash for file2 from the previous task awesome if not here it is: 53fe44b4753874f079a936325d1fdc9b1691956a29c3aaf8643cdbd49f5984bf
+
+As we can see, we have 4 results:
+
+
+We are looking for the first rule, so the most appropriate is Webshell_b374k_rule1.
+
+Answer: Webshell_b374k_rule1
+
+#10.3 Examine the information for file 2 from Virus Total (VT). The Yara Signature Match is from what scanner?
+
+To respond to this question, we click on the next button:
+
+
+In the row of Webshell_b374k_rule1.
+
+Once the page loads, we can see the next web:
+
+
+The scanner is THOR APT.
+
+Answer: THOR APT Scanner
+
+#10.4 Enter the SHA256 hash of file 2 into Virus Total. Did every AV detect this as malicious? (Yay/Nay)
+
+To respond to this question, we should copy the text selected in the following page:
+
+
+Then, search on the virustotal page.
+
+
+We will see the next result:
+
+
+As we can see, not all the files have been detected as malicious.
+
+Answer: Nay
+
+#10.5 Besides .PHP, what other extension is recorded for this file?
+
+To respond to this question, we click on the details tab:
+
+
+Then, scroll down and we can find the name section.
+
+In this section, we will find our response.
+
+Answer: EXE
+
+#10.6 What JavaScript library is used by file 2?
+
+We come back to the Valhalla page:
+
+
+Then, click on the following button on the first rule:
+
+
+Once the page loads, we see the next website:
+
+
+Then, press control + f to search for files with the extension .js.
+
+We will have the next result:
+
+
+Answer: Zepto
+
+#10.7 Is this Yara rule in the default Yara file Loki uses to detect these type of hack tools? (Yay/Nay)
+
+For the last time, head back to the Valhalla site. Highlight and copy (ctrl + c) the rule name that we have been looking at.
+
+
+Going back to the terminal, let’s see if we can find this Yara rule in our Loki directory. We can do this with, ls /home/cmnatic/tools/Loki/signature-base/yara/ | grep “Webshell_b374k_rule1”.
+
+
+Nothing comes back so this should give you the answer.
+
+
+Answer: Nay
+
+Task 11 Conclusion
+
+11.1 No answer needed.
+
+Answer: No answer needed.
