@@ -1,7 +1,4 @@
 # Tak Tsun-Cybersecurity-Portfolio
-> Modul 1-8 are inspired by Google. Please visit this [link](https://www.coursera.org/google-certificates/cybersecurity-certificate) for further information. More are to come, stay tuned!
-
-> Please make sure you include the original MIT license.
  
 ## Professional Statements
 I am Tak-Tsun Chan, a Master of Cybersecurity candidate at La Trobe University with hands-on experience in technology risk assessment, security framework implementation, and stakeholder engagement. Currently serving as a Cyber Security Officer intern at Whittlesea Community Connections, I conduct comprehensive technology risk assessments and develop strategic recommendations for security improvements aligned with business objectives.
